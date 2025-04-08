@@ -8,6 +8,14 @@ Feature: JPH API Test
 
   Scenario: JPH GET Request
 
+    Given kullanici "JPHUrl" adresine gider
+    Then kullanici path parametresi olarak "posts/44" girer
+    Then kullanici bir GET request yapar ve response degerleri kaydedilir
+    Then kullanici response statusCode degerinin 200 oldugunu test eder
+    Then kullanici response contentType degerinin "application/json; charset=utf-8" oldugunu test eder
+    Then kullanici donen response degerini jsonPath formatinda kayit eder
+    Then kullanici donen response "title" degerinin "optio dolor molestias sit" oldugunu test eder
+
 
 
 
