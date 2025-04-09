@@ -18,22 +18,6 @@ Feature: JPH API Test
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     #    https://jsonplaceholder.typicode.com/posts/70 url'ine asagidaki body'e sahip bir
     #    PUT request yolladigimizda donen response'un
     #    status kodunun 200, content type'inin "application/json; charset=utf-8",
@@ -50,3 +34,8 @@ Feature: JPH API Test
 
   Scenario: PUT Request
 
+    Given kullanici "JPHUrl" adresine gider
+    Then kullanici path parametresi olarak "posts/70" girer
+    Then kullanici POST request yapmak icin "Ahmet","Merhaba",10 70 degerleri ile reqBody hazirlar
+    Then kullanici POST request yaparak response degerini kaydeder
+    Then kullanici response statusCode degerinin 200 oldugunu test eder
