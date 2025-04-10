@@ -39,3 +39,5 @@ Feature: JPH API Test
     Then kullanici POST request yapmak icin "Ahmet","Merhaba",10 70 degerleri ile reqBody hazirlar
     Then kullanici POST request yaparak response degerini kaydeder
     Then kullanici response statusCode degerinin 200 oldugunu test eder
+    Then kullanici donen response degerini jsonPath formatinda kayit eder
+    Then kullanici donen response "title" degerinin "optio dolor molestias sit" oldugunu test eder
