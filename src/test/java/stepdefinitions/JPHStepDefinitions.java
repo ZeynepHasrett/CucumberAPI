@@ -19,4 +19,9 @@ public class JPHStepDefinitions {
         url+= ConfigReader.getProperty(configBaseUrl);
     }
 
+    @Then("kullanici path parametresi olarak {string} girer")
+    public void kullanici_path_parametresi_olarak_girer(String pathParams) {
+        url=url+"/"+pathParams;
+    }
+
 }
