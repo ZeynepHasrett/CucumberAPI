@@ -37,4 +37,9 @@ public class JPHStepDefinitions {
         assertEquals(expStatusCode, response.getStatusCode());
     }
 
+    @Then("kullanici response contentType degerinin {string} oldugunu test eder")
+    public void kullanici_response_content_type_degerinin_oldugunu_test_eder(String expContentType) {
+        assertEquals(expContentType,response.getContentType());
+    }
+
 }
