@@ -42,4 +42,9 @@ public class JPHStepDefinitions {
         assertEquals(expContentType,response.getContentType());
     }
 
+    @Then("kullanici donen response degerini jsonPath formatinda kayit eder")
+    public void kullanici_donen_response_degerini_json_path_formatinda_kayit_eder() {
+        resJP=response.jsonPath();
+    }
+
 }
