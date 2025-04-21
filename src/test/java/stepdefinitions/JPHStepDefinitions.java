@@ -47,4 +47,9 @@ public class JPHStepDefinitions {
         resJP=response.jsonPath();
     }
 
+    @Then("kullanici donen response {string} degerinin {string} oldugunu test eder")
+    public void kullanici_donen_response_degerinin_oldugunu_test_eder(String expKey, String expValue) {
+        assertEquals(expValue,resJP.getString(expKey));
+    }
+
 }
