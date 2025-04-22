@@ -52,4 +52,13 @@ public class JPHStepDefinitions {
         assertEquals(expValue,resJP.getString(expKey));
     }
 
+    @Then("kullanici POST request yapmak icin {string},{string},{int} {int} degerleri ile reqBody hazirlar")
+    public void kullanici_post_request_yapmak_icin_degerleri_ile_req_body_hazirlar(String title, String body, Integer userId, Integer id) {
+        reqBody=new JSONObject();
+        reqBody.put("title",title);
+        reqBody.put("body",body);
+        reqBody.put("userId",userId);
+        reqBody.put("id",id);
+    }
+
 }
