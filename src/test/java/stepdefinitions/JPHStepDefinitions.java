@@ -1,6 +1,8 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.*;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -39,26 +41,32 @@ public class JPHStepDefinitions {
 
     @Then("kullanici response contentType degerinin {string} oldugunu test eder")
     public void kullanici_response_content_type_degerinin_oldugunu_test_eder(String expContentType) {
-        assertEquals(expContentType,response.getContentType());
+        assertEquals(expContentType, response.getContentType());
     }
 
     @Then("kullanici donen response degerini jsonPath formatinda kayit eder")
     public void kullanici_donen_response_degerini_json_path_formatinda_kayit_eder() {
-        resJP=response.jsonPath();
+        resJP = response.jsonPath();
     }
 
     @Then("kullanici donen response {string} degerinin {string} oldugunu test eder")
     public void kullanici_donen_response_degerinin_oldugunu_test_eder(String expKey, String expValue) {
-        assertEquals(expValue,resJP.getString(expKey));
+        assertEquals(expValue, resJP.getString(expKey));
     }
 
     @Then("kullanici POST request yapmak icin {string},{string},{int} {int} degerleri ile reqBody hazirlar")
     public void kullanici_post_request_yapmak_icin_degerleri_ile_req_body_hazirlar(String title, String body, Integer userId, Integer id) {
-        reqBody=new JSONObject();
-        reqBody.put("title",title);
-        reqBody.put("body",body);
-        reqBody.put("userId",userId);
-        reqBody.put("id",id);
+        reqBody = new JSONObject();
+        reqBody.put("title", title);
+        reqBody.put("body", body);
+        reqBody.put("userId", userId);
+        reqBody.put("id", id);
+    }
+
+    @Then("kullanici POST request yaparak response degerini kaydeder")
+    public void kullanici_post_request_yaparak_response_degerini_kaydeder() {
+
+        response = RestAssured.given().contentType(ContentType.JSON).when().body(reqBody.toString()).put(url);
     }
 
 }
