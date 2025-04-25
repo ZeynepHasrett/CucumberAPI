@@ -69,4 +69,11 @@ public class JPHStepDefinitions {
         response = RestAssured.given().contentType(ContentType.JSON).when().body(reqBody.toString()).put(url);
     }
 
+    @Then("kullanici {string} header degerinin {string} oldugunu test eder")
+    public void kullanici_header_degerinin_oldugunu_test_eder(String expHeaderkey, String expHeaderValue) {
+        assertEquals(expHeaderValue,response.getHeader(expHeaderkey));
+    }
+
+
+
 }
