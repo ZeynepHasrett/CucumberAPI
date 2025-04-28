@@ -74,6 +74,9 @@ public class JPHStepDefinitions {
         assertEquals(expHeaderValue,response.getHeader(expHeaderkey));
     }
 
-
+    @Then("kullanici userid degerinin {int} oldugunu test eder")
+    public void kullanici_userid_degerinin_oldugunu_test_eder(int expUserId) {
+        assertEquals(expUserId,resJP.getInt("userId"));
+    }
 
 }
