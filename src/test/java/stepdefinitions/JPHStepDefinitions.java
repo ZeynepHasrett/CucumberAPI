@@ -84,4 +84,10 @@ public class JPHStepDefinitions {
         assertEquals(expid,resJP.getInt("id"));
     }
 
+    @Then("kullanici response {string} degerinin {string} oldugunu test eder")
+    public void kullanici_response_degerinin_oldugunu_test_eder(String expKey, String expValue) {
+        assertEquals(expValue,resJP.getString(expKey));
+
+    }
+
 }
