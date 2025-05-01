@@ -90,4 +90,9 @@ public class JPHStepDefinitions {
 
     }
 
+    @Then("kullanici reponse {string} degerinin {string} oldugunu test eder")
+    public void kullaniciReponseDegerininOldugunuTestEder(String expKey, String expValue) {
+        assertEquals(expValue,resJP.getString(expKey));
+    }
+
 }
