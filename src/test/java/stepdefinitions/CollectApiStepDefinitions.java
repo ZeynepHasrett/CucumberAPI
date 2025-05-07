@@ -17,7 +17,7 @@ public class CollectApiStepDefinitions {
     @Then("kullanici sorgu icin pathparametresi olarak {string} girer")
     public void kullaniciSorguIcinPathparametresiOlarakGirer(String pathParams) {
 
-
+            url=url+"/"+pathParams;
     }
 
 }
