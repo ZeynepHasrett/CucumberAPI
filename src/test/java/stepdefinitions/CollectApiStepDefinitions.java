@@ -20,4 +20,9 @@ public class CollectApiStepDefinitions {
             url=url+"/"+pathParams;
     }
 
+    @Then("kullanici query parametresi olark il degerine {string} ilce degerine {string} girer")
+    public void kullaniciQueryParametresiOlarkIlDegerineIlceDegerineGirer(String il, String ilce) {
+        url=url+"?il="+il+"&ilce="+ilce;
+    }
+
 }
