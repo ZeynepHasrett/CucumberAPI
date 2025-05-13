@@ -25,4 +25,9 @@ public class CollectApiStepDefinitions {
         url=url+"?il="+il+"&ilce="+ilce;
     }
 
+    @Then("kullanici gereki header degerleri ile bir GET request yapar")
+    public void kullaniciGerekiHeaderDegerleriIleBirGETRequestYapar() {
+
+
+    }
 }
