@@ -27,7 +27,7 @@ public class CollectApiStepDefinitions {
 
     @Then("kullanici gereki header degerleri ile bir GET request yapar")
     public void kullaniciGerekiHeaderDegerleriIleBirGETRequestYapar() {
-
+        response= RestAssured.given().header("authorization","apikey 2ecC1yGMUbcPi9V1YuXKJ5:2TLu6uoUy3ZDCvIS2xIsOu").when().get(url);
 
     }
 }
