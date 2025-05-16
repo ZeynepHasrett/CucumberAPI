@@ -33,6 +33,6 @@ public class CollectApiStepDefinitions {
 
     @Then("kullanici donen response degerini yazdrir")
     public void kullaniciDonenResponseDegeriniYazdrir() {
-
+        response.prettyPrint();
     }
 }
